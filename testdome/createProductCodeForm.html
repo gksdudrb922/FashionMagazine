@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <script>
+      function createProductCodeForm(parent) {
+        var form = $("<form/>");
+
+        form.append($("<label>").text('Product Code:'));
+        form.append($("<input>").attr('name', 'productCode').attr('type', 'text').attr('onfocus','$("label[name]").show()').attr('onblur','$("label[name]").hide()'));
+        form.append($("<label>").attr('name', 'hint').text('The product code can be found on the label.').attr('style','display:none'));
+
+        form.append('<br>');
+
+        form.append($("<input>").attr('type', 'submit'));
+
+        parent.append(form);
+      }
+    </script>
+    <form class="form1" action="index.html" method="post">
+      <label for="in">Product Code:</label>
+      <input id="in" type="text" name="productCode" onfocus="$('label[name]').show()" onblur="$('label[name]').hide()">
+      <label for="in" name="hint" style="display:none">The product code can be found on the label.</label>
+      <br>
+      <input type="submit" name="" value="submit">
+    </form>
+  </body>
+</html>

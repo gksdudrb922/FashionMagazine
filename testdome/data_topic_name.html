@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <script>
+      function newMessage(topicName) {
+        //Write your code here
+        $('p[data-topic-name='+topicName+']').css('backgroundColor','red');
+      }
+
+      // Example case
+      $('body').html(
+        `<div>
+          <p data-topic-name="discussion">General discussion</p>
+          <p data-topic-name="bugs">Bugs</p>
+          <p data-topic-name="animals">Animals</p>
+        </div>`
+      );
+      newMessage("discussion");
+      console.log($('body').html());
+    </script>
+  </body>
+</html>

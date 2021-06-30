@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <script>
+      function setup() {
+        // Write your code here.
+        /*var ele=document.getElementsByClassName('remove');
+        for(i=0;i<ele.length;i++){
+          ele[i].addEventListener('click',function(){
+            this.parentNode.remove();
+          });
+        }*/
+        $('.remove').on('click',function(){
+          this.parentNode.remove();
+        })
+      }
+
+      // Example case.
+      document.body.innerHTML = `
+      <div class="image">
+        <img src="https://goo.gl/kjzfbE" alt="First">
+        <button class="remove">X</button>
+      </div>
+      <div class="image">
+        <img src="https://goo.gl/d2JncW" alt="Second">
+        <button class="remove">X</button>
+      </div>`;
+
+      setup();
+
+      document.getElementsByClassName("remove")[0].click();
+      console.log(document.body.innerHTML);
+    </script>
+  </body>
+</html>
